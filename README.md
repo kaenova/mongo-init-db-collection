@@ -19,7 +19,6 @@ docker run -e MONGO_DB_NAME=my_db -e MONGO_COLLECTION=my_collection -e MONGO_URL
 version: '3.7'
 
 services:
-  
   mongo-db:
     image: mongo
     expose:
@@ -27,6 +26,8 @@ services:
 
   mongo-init-db-collection:
     image: kaenova/mongo-init-db-collection
+    depends_on:
+      - mongo-db
     environment:
       - MONGO_DB_NAME=my_db
       - MONGO_COLLECTION=my_collection
