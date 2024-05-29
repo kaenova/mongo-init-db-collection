@@ -41,7 +41,7 @@ func main() {
 	mongoURL := checkEnv("MONGO_URL")
 	mongoCollection := envDefault("MONGO_COLLECTION", "delete_me")
 
-	if mongoCollection == "delte_me" {
+	if mongoCollection == "delete_me" {
 		log.Println("Warning: Using default collection name 'delete_me'")
 	}
 
